@@ -1,0 +1,30 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_commodetto.json",
+		"$(MODULES)/drivers/ssd1306/manifest_i2c.json"
+	],
+	"modules": {
+		"*": "./main"
+	},
+	"config": {
+		"screen": "ssd1306"
+	},
+  "resources":{
+		"*": [
+			"$(MODDABLE)/examples/drivers/ssd1306/palatino_36"
+		]
+	},
+	"defines": {
+		"ssd1306": {
+			"dither": true,
+			"width": 128,
+			"height": 64,
+		  "scl_pin": 26,
+		  "sda_pin": 0,
+		  "address": 60,
+		  "spi": false,
+		  "i2c": true
+    }
+	}
+}
